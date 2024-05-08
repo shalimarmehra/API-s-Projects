@@ -10,10 +10,10 @@ const dictionary = (word) => {
     },
   };
   fetch(
-    'https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary?word=' + word,
+    `https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary?word=${word}`,
     options
   )
-    .then((response) => response.json())
+    .then(response => response.json())
     .then((response) => {
         
       wordheading.innerHTML = response.word;
@@ -24,5 +24,5 @@ const dictionary = (word) => {
 
 searchbtn.addEventListener("click", (e) => {
   e.preventDefault();
-  dictionary(searchinput)
+  dictionary(searchinput.value)
 });
